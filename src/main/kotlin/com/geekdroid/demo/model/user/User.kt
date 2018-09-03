@@ -1,5 +1,6 @@
-package com.geekdroid.demo.model
+package com.geekdroid.demo.model.user
 
+import jdk.nashorn.internal.ir.annotations.Ignore
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
