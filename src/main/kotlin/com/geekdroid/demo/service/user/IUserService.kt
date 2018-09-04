@@ -1,6 +1,6 @@
 package com.geekdroid.demo.service.user
 
-import com.geekdroid.demo.core.ResponseResult
+import com.geekdroid.demo.core.response.ResponseResult
 import com.geekdroid.demo.model.user.User
 import com.github.pagehelper.PageInfo
 
@@ -11,4 +11,5 @@ interface IUserService {
     fun selectAll(): ResponseResult<List<User>>
     fun getUserListByPage(page: Int, size: Int): ResponseResult<PageInfo<User>>
     fun updateUserInfo(id: Long, user: User): ResponseResult<User>
+    fun deleteUser(id: Long): ResponseResult<Any>
 }

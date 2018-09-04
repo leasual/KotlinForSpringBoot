@@ -1,4 +1,4 @@
-package com.geekdroid.demo.core
+package com.geekdroid.demo.core.response
 
 enum class ResponseCode(val code: Int){
     SUCCESS(200),

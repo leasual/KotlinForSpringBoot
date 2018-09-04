@@ -1,6 +1,6 @@
 package com.geekdroid.demo.controller.user
 
-import com.geekdroid.demo.core.ResponseResult
+import com.geekdroid.demo.core.response.ResponseResult
 import com.geekdroid.demo.model.user.User
 import com.geekdroid.demo.service.user.IUserService
 import com.github.pagehelper.PageInfo
@@ -44,5 +44,11 @@ class UserController {
     fun getUserList(@RequestParam(value = "page", required = false, defaultValue = "1") page: Int,
                     @RequestParam(value = "size", required = false, defaultValue = "10") size: Int): ResponseResult<PageInfo<User>> {
         return userService.getUserListByPage(page, size)
+    }
+
+    @ApiOperation(value = "删除用户", notes = "用户id")
+    @PostMapping("/deleteUser/{id}")
+    fun deleteUser(@PathVariable id: Long): ResponseResult<Any> {
+        return userService.deleteUser(id)
     }
 }

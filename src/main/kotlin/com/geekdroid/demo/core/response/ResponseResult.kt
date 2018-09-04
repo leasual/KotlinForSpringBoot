@@ -1,4 +1,4 @@
-package com.geekdroid.demo.core
+package com.geekdroid.demo.core.response
 
 data class ResponseResult<T>(
        var code: Int,
