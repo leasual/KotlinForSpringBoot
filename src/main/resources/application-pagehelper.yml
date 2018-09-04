@@ -1,0 +1,6 @@
+###开启分页加载，只能使用mybatis进行的查询才有效
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+  helper-dialect: mysql

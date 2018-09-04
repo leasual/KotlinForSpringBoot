@@ -4,11 +4,12 @@ spring:
   profiles:
     ##################使用开发配置还是生产配置####################
     active: dev
+    include: mybatis,pagehelper
   ##################数据库配置####################
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/user?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false
     username: root
-    password: 12345678
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
   ##################JPA配置####################
   jpa:

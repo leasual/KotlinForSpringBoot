@@ -1,0 +1,11 @@
+###redis
+spring:
+  redis:
+    host: 39.108.212.90
+    port: 6379
+    database: 0
+    jedis:
+      pool:
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms

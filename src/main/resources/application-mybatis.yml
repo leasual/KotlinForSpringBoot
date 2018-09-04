@@ -1,0 +1,5 @@
+###开启此配置解决，model模型字段名称跟数据库的字段名称不一致导致的返回数据中模型有些字段是空的。
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
