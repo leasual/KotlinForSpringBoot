@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@Api(description = "用户信息")
+@Api(tags = ["用户相关接口"], description = "用户信息")
 class UserController {
 
     @Autowired
