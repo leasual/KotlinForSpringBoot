@@ -29,13 +29,6 @@ public class SwaggerConfiguration {
     @Bean
     public Docket createRestApi() {
         return new Docket((DocumentationType.SWAGGER_2))
-                //修改BASE_URL显示
-                .pathProvider(new RelativePathProvider(context) {
-                    @Override
-                    public String getApplicationBasePath() {
-                        return "www.mydomain.com/";
-                    }
-                })
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.geekdroid"))
