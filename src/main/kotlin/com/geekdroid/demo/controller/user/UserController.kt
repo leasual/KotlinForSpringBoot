@@ -1,25 +1,33 @@
 package com.geekdroid.demo.controller.user
 
+import com.geekdroid.demo.base.BaseController
 import com.geekdroid.demo.core.response.ResponseResult
+import com.geekdroid.demo.exception.GlobalValidErrorException
 import com.geekdroid.demo.model.user.User
 import com.geekdroid.demo.service.user.IUserService
 import com.github.pagehelper.PageInfo
-
-import io.swagger.annotations.*
+import io.swagger.annotations.Api
+import io.swagger.annotations.ApiOperation
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.validation.BindingResult
+import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @Api(tags = ["用户相关接口"], description = "用户信息")
 @RequestMapping("/user")
-class UserController {
+class UserController : BaseController() {
 
     @Autowired
     lateinit var userService: IUserService
 
     @ApiOperation(value = "创建用户", notes = "用户名唯一")
     @PostMapping("/create")
-    fun createUser(@RequestBody user: User): ResponseResult<User> {
+    fun createUser(@Validated @RequestBody user: User, result: BindingResult): ResponseResult<User> {
+        if (result.hasErrors()) {
+            logger.error("create user error= ${result.allErrors[0].code}")
+            throw GlobalValidErrorException(result.allErrors[0].defaultMessage)
+        }
         return userService.createUser(user)
     }
 

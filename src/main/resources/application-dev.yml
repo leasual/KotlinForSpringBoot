@@ -1,2 +1,8 @@
 server:
   port: 8081
+logging:
+  level:
+    ##这里需要加上包名
+    com.geekdroid.demo: debug
+  pattern:
+    console: '%clr(%d{HH:mm:ss}){yellow} [%clr(%thread){red}] %-5level --- %clr(%logger){green} | %msg%n'
