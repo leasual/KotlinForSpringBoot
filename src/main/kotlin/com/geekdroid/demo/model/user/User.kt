@@ -10,6 +10,6 @@ data class User(
         @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Long = 0L,
         var userName: String = "",
-        var nickName: String = "",
+        var nickName: String?,
         var password: String = ""
 ) : Serializable

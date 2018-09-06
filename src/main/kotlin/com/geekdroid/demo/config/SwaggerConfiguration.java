@@ -1,6 +1,5 @@
 package com.geekdroid.demo.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -9,22 +8,16 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.paths.RelativePathProvider;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import javax.servlet.ServletContext;
 
+/**
+ * swagger 文档生成配置
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
-
-    private final ServletContext context;
-
-    @Autowired
-    public SwaggerConfiguration(ServletContext context) {
-        this.context = context;
-    }
 
     @Bean
     public Docket createRestApi() {

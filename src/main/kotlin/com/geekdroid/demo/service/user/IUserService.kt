@@ -11,5 +11,5 @@ interface IUserService {
     fun selectAll(): ResponseResult<List<User>>
     fun getUserListByPage(page: Int, size: Int): ResponseResult<PageInfo<User>>
     fun updateUserInfo(id: Long, user: User): ResponseResult<User>
-    fun deleteUser(id: Long): ResponseResult<Any>
+    fun deleteUser(id: Long): ResponseResult<User>
 }
