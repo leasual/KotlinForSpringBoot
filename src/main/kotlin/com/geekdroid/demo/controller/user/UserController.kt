@@ -1,6 +1,8 @@
 package com.geekdroid.demo.controller.user
 
 import com.geekdroid.demo.base.BaseController
+import com.geekdroid.demo.core.response.Response
+import com.geekdroid.demo.core.response.ResponseCode
 import com.geekdroid.demo.core.response.ResponseResult
 import com.geekdroid.demo.exception.GlobalValidErrorException
 import com.geekdroid.demo.model.user.User
@@ -25,8 +27,8 @@ class UserController : BaseController() {
     @PostMapping("/create")
     fun createUser(@Validated @RequestBody user: User, result: BindingResult): ResponseResult<User> {
         if (result.hasErrors()) {
-            logger.error("create user error= ${result.allErrors[0].code}")
-            throw GlobalValidErrorException(result.allErrors[0].defaultMessage)
+            logger.error("create user error= ${result.allErrors[0].defaultMessage}")
+            throw GlobalValidErrorException()
         }
         return userService.createUser(user)
     }
