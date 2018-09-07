@@ -19,10 +19,10 @@ data class User(
 
         @get:Pattern(regexp = "^1([345789])\\d{9}$", message = "手机号码格式错误")
         @get:NotBlank(message = "用户名不能为空")
-        var userName: String = "",
+        var userName: String?,
 
         var nickName: String?,
 
         @get:NotBlank(message = "密码不能为空")
-        var password: String = ""
+        var password: String?
 ) : Serializable

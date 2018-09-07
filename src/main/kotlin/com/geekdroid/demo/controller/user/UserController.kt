@@ -1,8 +1,6 @@
 package com.geekdroid.demo.controller.user
 
 import com.geekdroid.demo.base.BaseController
-import com.geekdroid.demo.core.response.Response
-import com.geekdroid.demo.core.response.ResponseCode
 import com.geekdroid.demo.core.response.ResponseResult
 import com.geekdroid.demo.exception.GlobalValidErrorException
 import com.geekdroid.demo.model.user.User

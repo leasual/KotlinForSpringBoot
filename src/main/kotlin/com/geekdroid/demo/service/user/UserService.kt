@@ -24,7 +24,7 @@ class UserService: IUserService {
      * 创建用户
      */
     override fun createUser(user: User): ResponseResult<User> {
-        val dbUser = userMapper.findUserByName(user.userName)
+        val dbUser = userMapper.findUserByName(user.userName!!)
         if (dbUser != null && user.userName == dbUser.userName) {
             throw GlobalErrorInfoException(GlobalErrorEnum.USER_ALREADY_EXIST)
         }
